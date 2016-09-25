@@ -6,5 +6,13 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  # Code that need to be executed before each test
+  def setup
+    FileUtils.rm_rf('public/sites')
+  end
+
+  # Code that need to be executed after each test
+  def teardown
+    FileUtils.rm_rf('public/sites')
+  end
 end

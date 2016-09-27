@@ -2,9 +2,11 @@ class Site < ApplicationRecord
   validates :name, :primary, :secondary, :background, presence: true
   validates :name, uniqueness: true
 
-  DEFAULT_PRIMARY = 'rgb(21, 140, 186)'
-  DEFAULT_SECONDARY = 'rgb(40, 182, 44)'
-  DEFAULT_BACKGROUND = 'rgb(255, 255, 255)'
+  DEFAULT_PRIMARY = 'darken(#428bca, 6.5%)'
+  DEFAULT_SECONDARY = '#5cb85c'
+  DEFAULT_BACKGROUND = '#fff'
+
+  scope :just_updated, -> { where('updated_at > ?', Time.now - 60)}
 
   def initialize(name)
     super()

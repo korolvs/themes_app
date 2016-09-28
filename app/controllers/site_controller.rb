@@ -2,7 +2,11 @@ class SiteController < ApplicationController
   def get
     name = params[:name]
     site = Site.find_by_name name
-    site = Site.new name if site.nil?
+    if site.nil?
+      site = Site.new name
+      site.save
+      CreateFolderJob.perform_later(site)
+    end
     render json: site
   end
 

@@ -20,8 +20,6 @@ class UpdateBootstrapJob < ApplicationJob
   end
 
   def run_grunt(site_path)
-    file = File.join(site_path, 'bootstrap.css')
-    FileUtils.rm(file) if File.exists?(file)
     `docker run -v #{site_path}:/public themesapp/grunt`
   end
 end

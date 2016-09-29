@@ -5,7 +5,7 @@
 ## About
 
 It is a simple app which helps you to customize basic colors(primary, secondary and background) of Bootstrap. You can create multiple "sites" with different themes.
-Several times a minute the app checks for sites updates and, if something changes, runs docker container with grunt which creates new bootstrap.css for updated site.
+Several times a minute the app checks for updates and, if something changes, runs docker container with grunt which creates new bootstrap.css for updated site.
 
 ## Used tools
 

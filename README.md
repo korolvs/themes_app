@@ -1,7 +1,5 @@
 # Themes app
 
-[http://54.154.139.60:3000/](http://54.154.139.60:3000/)
-
 ## About
 
 It is a simple app which helps you to customize basic colors(primary, secondary and background) of Bootstrap. You can create multiple "sites" with different themes.
